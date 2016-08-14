@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tittle: MyString
+  remark: MyText
+  is_finished: false
+
+two:
+  tittle: MyString
+  remark: MyText
+  is_finished: false
