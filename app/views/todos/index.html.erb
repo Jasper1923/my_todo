@@ -26,6 +26,13 @@
         <td><%= todo.remark %></td>
         <td><%= todo.is_finished %></td>
         <td><%= time_ago_in_words todo.created_at %> ago</td>
+        <td>
+          <% if todo.is_finished? %>
+            cancel
+          <% else %>
+            finished
+          <% end %>
+        </td>
         <td><%= link_to 'Show', todo %></td>
         <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
         <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
