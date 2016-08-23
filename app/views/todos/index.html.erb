@@ -28,9 +28,9 @@
         <td><%= time_ago_in_words todo.created_at %> ago</td>
         <td>
           <% if todo.is_finished? %>
-            cancel
+            Finished
           <% else %>
-            finished
+            Cancel
           <% end %>
         </td>
         <td><%= link_to 'Show', todo %></td>
