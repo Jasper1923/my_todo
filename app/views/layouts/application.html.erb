@@ -14,7 +14,22 @@
      <div class="page">
       <div class="header box">
         <h1><a href="/">Todo List</a></h1>
-      </div> <!-- header end -->
+          <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <p class="navbar-text pull-right">
+           <% if user_signed_in? %>
+             Logged in as <strong><%= current_user.email %></strong>.
+             <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+             <%= image_tag current_user.gravatar_url %>
+           <% else %>
+             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+           <% end %>
     <%= yield %>
  <div class="foot">
         Copyright &copy; <a href="http://rubyonrails.org/" target="_blank">CGC <%= image_tag("rails.png") %></a>
